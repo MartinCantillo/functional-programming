@@ -49,6 +49,16 @@ public class Person {
         this.email = email;
     }
 
+    @Override
+    public String toString() {
+        return "{" +
+            " id='" + getId() + "'" +
+            ", name='" + getName() + "'" +
+            ", surname='" + getSurname() + "'" +
+            ", email='" + getEmail() + "'" +
+            "}";
+    }
+
     
 
     public static void printNames(String name){

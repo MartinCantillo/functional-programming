@@ -37,5 +37,44 @@ public class StreamsOperations {
 
         System.out.println(personsDtos);
 
+          // distinct(): Removes duplicates
+          List<Integer> distinctNumbers = Arrays.asList(1, 2, 2, 3, 3, 4);
+          List<Integer> uniqueNumbers = distinctNumbers.stream()
+                                                       .distinct()
+                                                       .collect(Collectors.toList());
+          System.out.println("Distinct numbers: " + uniqueNumbers);
+
+           // forEach(): Applies an action to each element of the Stream
+        System.out.print("Numbers: ");
+        numbers.stream().forEach(n -> System.out.print(n + " "));
+        System.out.println();
+
+        // collect(): Collects the elements into a collection like a list or set
+        List<Integer> collectedNumbers = numbers.stream()
+                                                 .collect(Collectors.toList());
+        System.out.println("Collected numbers: " + collectedNumbers);
+
+        // reduce(): Combines the elements of a Stream into a single value
+        int sum = numbers.stream()
+                         .reduce(0, (a, b) -> a + b);  // Sum all elements
+        System.out.println("Sum of numbers: " + sum);
+
+        // count(): Counts the number of elements
+        long count = numbers.stream()
+                            .count();
+        System.out.println("Count of numbers: " + count);
+
+        // anyMatch(), allMatch(), noneMatch(): Performs match tests
+        boolean hasEven = numbers.stream()
+                                 .anyMatch(n -> n % 2 == 0);  // Check if any number is even
+        boolean allEven = numbers.stream()
+                                 .allMatch(n -> n % 2 == 0);  // Check if all numbers are even
+        boolean noEven = numbers.stream()
+                                .noneMatch(n -> n % 2 == 0);  // Check if no number is even
+        
+        System.out.println("Any even number? " + hasEven);
+        System.out.println("All even numbers? " + allEven);
+        System.out.println("No even numbers? " + noEven);
+
     }
 }
