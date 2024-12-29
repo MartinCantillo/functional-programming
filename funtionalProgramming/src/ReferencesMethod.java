@@ -7,7 +7,7 @@ public class ReferencesMethod {
 public static void main(String[] args) {
 
 
-    /**static method references (class::Staticmethod) */
+    /**static method references (class::Staticmethod) = is the same a instance method references*/
 
     List<String> names= Arrays.asList("Martin","Camilo","Andres");
 
